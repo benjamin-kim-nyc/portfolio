@@ -32,7 +32,7 @@ try {
   const { default: Home } = await import(pathToFileURL(path.join(scratch, 'home.mjs')));
   const { default: Project } = await import(pathToFileURL(path.join(scratch, 'project.mjs')));
   const { projects } = await import(pathToFileURL(path.join(scratch, 'projects.mjs')));
-  const base = '/portfolio';
+  const base = ''; // Custom domain: benjikim.me
   const escape = s => s.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
   async function page(route, title, element) {
     let body = renderToStaticMarkup(element).replace(/\b(href|src)="\/(?!\/)/g, `$1="${base}/`)
