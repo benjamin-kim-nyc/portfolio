@@ -7,7 +7,7 @@ export default async function Project({params}:{params:Promise<{slug:string}>}) 
  const {slug}=await params; const p=projects.find(p=>p.slug===slug); if(!p)notFound();
  return <main className="portfolio detail">
   <header className="detail-header"><a href="/">Benji Kim</a><nav aria-label="Main navigation"><a href="/#work">work</a><a href="/#about-me">about me</a><a href="/#contact">contact</a></nav></header>
-  <article><h1>{p.focus}</h1><p className="lead">{p.detail}</p><p className="role">Role: User Research, Design</p>
+  <article><h1>{p.focus}</h1><p className="lead">{p.detail}</p>
   <figure className="detail-figure"><img src={p.image} width={p.width ?? 1247} height={p.height} alt={p.alt}/></figure>
   <section className="detail-copy"><h2>The interface</h2><ul>{p.notes.map(note=><li key={note}>{note}</li>)}</ul></section>
   {slug === 'travel-insurance' && <section className="quote-designs" aria-label="Quote form designs">
@@ -19,6 +19,6 @@ export default async function Project({params}:{params:Promise<{slug:string}>}) 
     <section className="video-row"><video controls autoPlay={false} playsInline preload="metadata" poster="/images/compare-latest-poster.jpg" aria-label="Plan comparison walkthrough" aria-describedby="compare-description"><source src="/videos/compare-latest.mp4" type="video/mp4"/><a href="/videos/compare-latest.mp4">Download the plan comparison video</a></video><aside className="video-description" id="compare-description"><h2>Compare plans</h2><p>Review selected plans side by side, with prices and selection actions at the top of each column.</p><p>Aligned rows organize plan summaries, medical benefits, and trip protection, making differences in coverage easier to find.</p></aside></section>
   </section>}
   <p className="detail-back"><a href="/#work">← back to work</a></p></article>
-  <footer><p>based in NYC.</p><p><a href="mailto:benjikim@gmail.com">benjikim@gmail.com</a> / <a href="/documents/resume_2026.pdf" target="_blank" rel="noreferrer">resume</a> / <a className="phone" href="tel:+16466206406">646 620 6406</a></p></footer>
+  <footer><p><a href="mailto:benjikim@gmail.com">benjikim@gmail.com</a> / <a href="/documents/resume26.pdf" target="_blank" rel="noreferrer">resume</a> / <a className="phone" href="tel:+16466206406">646 620 6406</a></p></footer>
  </main>;
 }
